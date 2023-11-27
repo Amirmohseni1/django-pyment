@@ -1,0 +1,4 @@
+# base framework
+django
+zeep
+requests
