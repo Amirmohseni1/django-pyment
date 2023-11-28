@@ -14,8 +14,8 @@ class AbstractPayment(models.Model):
     """
 
     class Currency(models.TextChoices):
-        IRR = "IRR",'IRR (ریال)'
-        IRT = "IRT", 'IRT (تومان)'
+        IRR = "IRR", "IRR (ریال)"
+        IRT = "IRT", "IRT (تومان)"
 
     class Status(models.TextChoices):
         OK = "OK"
