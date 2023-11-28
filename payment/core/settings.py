@@ -1,5 +1,4 @@
 from django.conf import settings
-from django.urls import reverse
 
 """
     You can control the currency unit for all transactions by using the variable 
