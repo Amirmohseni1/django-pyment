@@ -1,5 +1,5 @@
 from django.db import models
-from .core.abstracts import AbstractPayment
+from payment.core.abstract_models import AbstractPayment
 from django.utils.translation import gettext_lazy as _
 from django.conf import settings
 

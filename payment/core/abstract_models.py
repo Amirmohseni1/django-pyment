@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from .settings import DEFAULT_CURRENCY
-from abc import ABC, abstractmethod
+from payment.core.settings import CURRENCY
 
 
 class AbstractPayment(models.Model):
@@ -31,7 +30,7 @@ class AbstractPayment(models.Model):
     currency = models.CharField(
         verbose_name=_("Currency"),
         choices=Currency.choices,
-        default=DEFAULT_CURRENCY,
+        default=CURRENCY,
         max_length=3,
         null=True,
         blank=True,
@@ -89,24 +88,3 @@ class AbstractPayment(models.Model):
 
     class Meta:
         abstract: True
-
-
-class AbstractService(ABC):
-    def __init__(self):
-        pass
-
-    @abstractmethod
-    def _request_to_provider(self):
-        pass
-
-    @abstractmethod
-    def _save_provider_response(self):
-        pass
-
-    @abstractmethod
-    def _verify_transactions(self):
-        pass
-
-    @abstractmethod
-    def _save_verify_response(self):
-        pass

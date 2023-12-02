@@ -9,16 +9,17 @@ from django.conf import settings
     - IRR -> IRAN Riyal
     - IRT -> IRAN Toman
 """
-if not hasattr(settings, "DEFAULT_CURRENCY"):
-    setattr(settings, "DEFAULT_CURRENCY", "IRR")
-DEFAULT_CURRENCY = settings.DEFAULT_CURRENCY
+if not hasattr(settings, "CURRENCY"):
+    setattr(settings, "CURRENCY", "IRR")
+CURRENCY = settings.CURRENCY
+MINIMUM_AMOUNT = 1000
 
 """
     The 'ZARINPAL_MERCHANT' variable, which must be configured in the main project settings,
     is crucial to avoid any issues in the payment process.
     Make sure to obtain the 'MERCHANT' value by contacting your payment service provider.
 """
-if not hasattr(settings, "ZARINPAL_MERCHANT"):
-    pass
 
+ZARINPAL_MERCHANT = ""
 ZARINPAL_CALLBACK_URL = ""
+ZARINPAL_ENDPOINT = ""
